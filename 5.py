@@ -5,7 +5,13 @@ r = requests.get(url)
 sp = BeautifulSoup(r.text, 'lxml')
 data = sp.find('div', class_='elementor-element elementor-element-8f353e5 elementor-widget elementor-widget-theme-post-content')
 titles = data.find('div', class_='elementor-widget-container')
-title = titles.find_all('h3')
-for i in title:
-    print(i.text)
-print()
+a = titles.find_all('h3')
+b = titles.find_all('p')
+x=1
+y=2
+for n in range(4):
+    print(a[4+x].text)
+    print(b[18+y].text)
+    y+=2
+    x+=1
+    print()
