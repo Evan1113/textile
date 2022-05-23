@@ -11,7 +11,8 @@ for j in search(query, stop=5, pause=2.0):
 	k.append(j)
 # google關鍵字查詢結果
 url = k[0]
-r = requests.get(url)
+headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0;Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'}
+r = requests.get(url, headers=headers)
 # 將網站原始碼抓下來
 sp = BeautifulSoup(r.text, 'lxml')
 con = sp.find_all("p",string=re.compile("永續")) 
