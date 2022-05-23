@@ -19,4 +19,3 @@ con = sp.find_all("p",string=re.compile("永續"))
 # 搜索内容里面包含“永續”的文字
 for i in con:
    print(i.text)
-print()
