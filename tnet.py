@@ -6,5 +6,7 @@ for i in range (1,17):
     sp = BeautifulSoup(r.text, 'lxml')
     titles = sp.find_all('h4', class_='member-list__title')
     url = sp.find_all('a', class_="member-list__link")
+    for n1 in titles:
+        print(n1.text, end='')
     for n in url:
         print(n.text, end='')
