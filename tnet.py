@@ -4,9 +4,12 @@ for i in range (1,17):
     url = 'https://www.tnet.org.tw/Member/List/99999?page='+str(i)
     r = requests.get(url)
     sp = BeautifulSoup(r.text, 'lxml')
-    titles = sp.find_all('h4', class_='member-list__title')
-    url = sp.find_all('a', class_="member-list__link")
-    for n1 in titles:
-        print(n1.text, end='')
-    for n in url:
-        print(n.text, end='')
+    sb = sp.find_all('div', class_='member-list__header')
+    for n1 in sb:
+        print(n1.h4.text)
+        if n1.a == None:
+            print()
+            print("no URL")
+            print()
+        else:
+            print(n1.a.text)
