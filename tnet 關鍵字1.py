@@ -8,6 +8,7 @@ for i in range (1,17):
     r = requests.get(url)
     sp = BeautifulSoup(r.text, 'lxml')
     sb = sp.find_all('div', class_='col-xs-12',string=re.compile("環保"))
+    print(sb)
     for n1 in sb:
         print(n1.h4.text)
         if n1.a == None:
